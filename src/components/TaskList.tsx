@@ -26,11 +26,31 @@ export function TaskList() {
   }
 
   function handleToggleTaskCompletion(id: number) {
-    
+    let taskToBeChangedIndex = 0;
+    for (let index = 0; index < tasks.length; index++) {
+      if(tasks[index].id === id) {
+        taskToBeChangedIndex = index;
+      }      
+    }
+    console.log("index ====== " + taskToBeChangedIndex);
+    const tasksCopy = [...tasks];    
+    let result = 
+    (tasksCopy[taskToBeChangedIndex].isComplete === false) ? true : false;
+    tasksCopy[taskToBeChangedIndex].isComplete = result;
+    setTasks(tasksCopy);
   }
 
   function handleRemoveTask(id: number) {
-    
+    let taskToBeRemovedIndex = 0;
+    for (let index = 0; index < tasks.length; index++) {
+      if(tasks[index].id === id) {
+        taskToBeRemovedIndex = index;
+      }      
+    }
+    console.log("index ====== " + taskToBeRemovedIndex);
+    const tasksCopy = [...tasks];
+    tasksCopy.splice(taskToBeRemovedIndex, 1);
+    setTasks(tasksCopy);
   }
 
   return (
