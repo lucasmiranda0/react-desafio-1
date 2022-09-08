@@ -32,7 +32,6 @@ export function TaskList() {
         taskToBeChangedIndex = index;
       }      
     }
-    console.log("index ====== " + taskToBeChangedIndex);
     const tasksCopy = [...tasks];    
     let result = 
     (tasksCopy[taskToBeChangedIndex].isComplete === false) ? true : false;
@@ -47,7 +46,6 @@ export function TaskList() {
         taskToBeRemovedIndex = index;
       }      
     }
-    console.log("index ====== " + taskToBeRemovedIndex);
     const tasksCopy = [...tasks];
     tasksCopy.splice(taskToBeRemovedIndex, 1);
     setTasks(tasksCopy);
